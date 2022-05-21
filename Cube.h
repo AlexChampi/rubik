@@ -82,6 +82,7 @@ public:
     void rotateVis(float angle, int side, int x, int y, int z);
     void endRotation(int x, int y, int z, int side);
 
+    void readFile();
     void log();
 };
 

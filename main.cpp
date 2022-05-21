@@ -22,7 +22,7 @@ int main(int argc, char **argv) {
     WrapperClass::Setup(window, events);
 
     Camera::initialize();
-    FileManager::initialize();
+    FileManager::initialize("input.txt");
 
 
     glutDisplayFunc(WrapperClass::WindowCallback);

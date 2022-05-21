@@ -7,5 +7,5 @@
 EventHelper::EventHelper(float angle, float maxAngle) : angle(angle), max_angle(maxAngle) {}
 
 bool EventHelper::isValid() {
-    return (angle <= max_angle + 90) && (angle >= max_angle - 90);
+    return (angle < max_angle + 90) && (angle > max_angle - 90);
 }

@@ -6,9 +6,11 @@
 #include "FileManager.h"
 
 std::string FileManager::inputFile;
+std::ifstream FileManager::in;
 std::ofstream FileManager::out;
 
-void FileManager::initialize() {
-
+void FileManager::initialize(const std::string & filename) {
+    inputFile = filename;
+    in.open(inputFile);
     out.open("log.txt");
 }

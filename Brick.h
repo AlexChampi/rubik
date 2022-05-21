@@ -14,7 +14,7 @@ enum Color {
 
 
 class Brick {
-private:
+public:
     GLubyte *set_dark();
     GLubyte *paint(int position);
 

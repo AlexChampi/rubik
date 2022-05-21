@@ -13,8 +13,9 @@ class FileManager {
 private:
     static std::string inputFile;
 public:
+    static std::ifstream in;
     static std::ofstream out;
-    static void initialize();
+    static void initialize(const std::string & filename);
 
 };
 

@@ -2,13 +2,34 @@
 // Created by alekschamp on 15.05.22.
 //
 
+#include <iostream>
 #include "Events.h"
 
-static const int speed = 3;
+int speed = 45;
 
 void Events::key_callback_press(GLubyte keycode, int x, int y) {
 
     switch (keycode) {
+        case 'I' :
+            cube->readFile();
+            break;
+
+        case 'T':
+            this->Y();
+            this->Y();
+            for (int i = 0; i < 50; ++i) {
+                shuffle();
+                solve();
+                if (!isSecondLayer()) {
+                    std::cout << i << '\n';
+                    std::cout << cube->getColors();
+                    break;
+                }
+            }
+            std::cout << "GOOD";
+//            exit(0);
+            break;
+
         case 27:
             window->terminate();
             break;
@@ -179,9 +200,5 @@ void Events::y() {
 }
 
 Events::Events(Window &window, Cube &cube) : window(&window), cube(&cube) {}
-//
-//Events::Events(const Events &events) {
-//
-//}
 
 

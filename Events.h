@@ -40,6 +40,8 @@ private:
     void cross();
     void cornerCross();
     void secondLayer();
+
+    bool isCrossready();
 public:
     Events(Window &window, Cube &cube);
 
@@ -48,6 +50,10 @@ public:
     void key_callback_press(GLubyte keycode, int x, int y);
 
     void shuffle();
+
+    bool iscornerCross();
+
+    bool isSecondLayer();
 };
 
 

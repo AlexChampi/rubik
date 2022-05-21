@@ -277,13 +277,32 @@ std::string Cube::getColors() {
     std::string res;
     for (auto i: stringVector) {
         res += i;
-        FileManager::out << i << std::endl;
+//        FileManager::out << i << std::endl;
     }
     return res;
 }
 
 Cube::Cube() {
     memset(rotateAngle, 0, sizeof(rotateAngle));
+}
+
+void Cube::readFile() {
+    for (int i = -size / 2; i < (size + 1) / 2; ++i) {
+        for (int j = -size / 2; j < (size + 1) / 2; ++j) {
+            for (int k = -size / 2; k < (size + 1) / 2; ++k) {
+                if (i == -size / 2 || i == (size + 1) / 2 - 1 ||
+                    j == -size / 2 || j == (size + 1) / 2 - 1 ||
+                    k == -size / 2 || k == (size + 1) / 2 - 1) {
+                    for (auto i :
+                            bricks[i + size / 2][j + size / 2][k + size / 2].colors) {
+                        FileManager::out << Cube::colorName.at(i) << " ";
+                    }
+                    FileManager::out << '\n';
+                }
+            }
+        }
+    }
+    exit(0);
 }
 
 
